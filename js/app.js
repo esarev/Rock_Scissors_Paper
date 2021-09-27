@@ -10,6 +10,9 @@ window.addEventListener('load', function() {
       fields = document.querySelectorAll('.field'),
       userStep, compStep, countU = 0, countC = 0, blocked = false;
 
+  const music = document.createElement('embed');
+
+  music.src='./audio/RSP.mp3';
 
   function choiceUser(e) {
     if (blocked) return;
@@ -79,7 +82,10 @@ window.addEventListener('load', function() {
     res.innerText = 'Сделайте выбор';
     countUser.innerText = '0';
     countComp.innerText = '0';
+    document.body.append(music);
+    music.classList.add('visually-hidden');
     fields.forEach(item => item.classList.remove('active', 'error'));
+
 
   }
 
